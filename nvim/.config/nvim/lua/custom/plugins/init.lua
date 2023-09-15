@@ -1,10 +1,6 @@
 return {
   -- NOTE: First, some plugins that don't require any configuration
 
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
@@ -57,30 +53,8 @@ return {
     'lewis6991/gitsigns.nvim',
   },
 
-  -- Colorscheme
-  { "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000
-  },
-
-  {
-    'projekt0n/github-nvim-theme',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      require('github-theme').setup({
-        -- ...
-      })
-
-      vim.cmd('colorscheme github_dark_high_contrast')
-    end,
-  },
-
-  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
-
   'tjdevries/colorbuddy.vim',
   'tjdevries/gruvbuddy.nvim',
-  'norcalli/nvim-colorizer.lua',
 
   {
     -- Set lualine as statusline
@@ -129,4 +103,6 @@ return {
     },
     build = ':TSUpdate',
   },
+
+  'xiyaowong/transparent.nvim',
 }
