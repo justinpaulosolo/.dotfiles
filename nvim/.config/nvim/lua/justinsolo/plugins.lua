@@ -87,10 +87,13 @@ require('lazy').setup({
     },
   },
 
+  -- Colorscheme
   { "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000
   },
+
+  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
 
   {
     -- Set lualine as statusline

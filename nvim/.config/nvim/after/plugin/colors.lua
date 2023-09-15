@@ -1,1 +1,3 @@
-vim.cmd.colorscheme "catppuccin"
+vim.g.nightflyTransparent = true
+vim.cmd.colorscheme "nightfly"
+
