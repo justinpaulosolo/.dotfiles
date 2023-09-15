@@ -13,11 +13,6 @@ return {
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
 
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-  },
-
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
