@@ -61,11 +61,6 @@ return {
     'nvim-lualine/lualine.nvim',
   },
 
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-  },
-
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
@@ -104,5 +99,6 @@ return {
     build = ':TSUpdate',
   },
 
-  'xiyaowong/transparent.nvim',
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+
 }

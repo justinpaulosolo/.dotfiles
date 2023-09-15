@@ -1,9 +1,5 @@
-if not pcall(require, "colorbuddy") then
-  return
-end
+require("catppuccin").setup({
+  transparent_background = true
+})
 
-vim.opt.termguicolors = true
-
-vim.opt.bg = "dark"
-
-require("colorbuddy").colorscheme "gruvbuddy"
+vim.cmd.colorscheme "catppuccin"
