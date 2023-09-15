@@ -86,6 +86,10 @@ require('lazy').setup({
 
   { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
 
+  'tjdevries/colorbuddy.vim',
+  'tjdevries/gruvbuddy.nvim',
+  'norcalli/nvim-colorizer.lua',
+
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
