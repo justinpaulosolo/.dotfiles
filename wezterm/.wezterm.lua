@@ -13,7 +13,13 @@ end
 -- This is where you actually apply your config choices
 
 config.font = wezterm.font 'CaskaydiaCove Nerd Font'
-config.font_size = 16
+config.font_size = 18
+
+config.enable_scroll_bar = false
+
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
+config.freetype_load_target = "HorizontalLcd"
 
 -- and finally, return the configuration to wezterm
 return config
