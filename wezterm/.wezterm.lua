@@ -2,25 +2,19 @@
 local wezterm = require 'wezterm'
 
 -- This table will hold the configuration.
-local config = {}
+local config = {
+  color_scheme = 'Material Darker (base16)',
+  enable_tab_bar = false,
+  use_fancy_tab_bar = false,
+  font = wezterm.font({ family = "JetBrainsMono NerdFont" }),
+  font_size = 22,
+  window_padding = {
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
+  },
+}
 
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
-if wezterm.config_builder then
-  config = wezterm.config_builder()
-end
-
--- This is where you actually apply your config choices
-
-config.font = wezterm.font 'CaskaydiaCove Nerd Font'
-config.font_size = 18
-
-config.enable_scroll_bar = false
-
-config.use_fancy_tab_bar = false
-config.tab_bar_at_bottom = true
-config.freetype_load_target = "HorizontalLcd"
-
--- and finally, return the configuration to wezterm
 return config
 

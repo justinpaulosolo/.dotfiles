@@ -1,5 +1,4 @@
 return {
-
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
@@ -16,7 +15,6 @@ return {
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -26,6 +24,7 @@ return {
     build = ':TSUpdate',
   },
 
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
+  { 'marko-cerovac/material.nvim', priority = 10000},
 }
