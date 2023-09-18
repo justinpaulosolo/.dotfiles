@@ -24,17 +24,25 @@ return {
     build = ':TSUpdate',
   },
 
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim", name = "catppuccin", lazy = true },
 
-  { 'marko-cerovac/material.nvim', priority = 10000},
+  { 'marko-cerovac/material.nvim', lazy = true },
 
   'ThePrimeagen/harpoon',
   {
     'AlexvZyl/nordic.nvim',
-    lazy = false,
+    lazy = true,
+  },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
     priority = 1000,
     config = function()
-        require 'nordic' .load()
-    end
-}
+      require('rose-pine').setup({
+        disable_background = true,
+        disable_italics = true,
+      })
+      vim.cmd('colorscheme rose-pine')
+    end,
+  }
 }
