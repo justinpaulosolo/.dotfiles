@@ -1,5 +1,7 @@
 # General window
 alt - x : yabai -m window --close
+alt - f : yabai -m window --toggle zoom-fullscreen
+alt - t : yabai -m window --toggle float
 
 # Focus window
 alt - h : yabai -m window --focus west || yabai -m window --focus stack.prev || yabai -m window --focus stack.last
