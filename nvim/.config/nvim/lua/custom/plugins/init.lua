@@ -28,21 +28,35 @@ return {
 
   { 'marko-cerovac/material.nvim', lazy = true },
 
-  'ThePrimeagen/harpoon',
+  {'ThePrimeagen/harpoon',
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim"}
+  },
+
   {
     'AlexvZyl/nordic.nvim',
     lazy = true,
   },
+
   {
     'rose-pine/neovim',
     name = 'rose-pine',
     priority = 1000,
     config = function()
       require('rose-pine').setup({
-        disable_background = true,
-        disable_italics = true,
+        --disable_background = true,
+        --disable_italics = true,
       })
-      vim.cmd('colorscheme rose-pine')
+      --vim.cmd('colorscheme rose-pine')
+    end,
+  },
+
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    priority = 1000,
+    config = function()
+      vim.opt.background = "dark"
+      vim.cmd("colorscheme oxocarbon")
     end,
   }
 }
