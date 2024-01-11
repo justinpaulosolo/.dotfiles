@@ -5,8 +5,6 @@
 -- \____//____/\____/_____/\____/  
 --
 
-require "justinsolo.globals"
-
 vim.g.mapleader = " "
 vim.g.maplocalleader =  " "
 
@@ -21,27 +19,9 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   }
 end
+
 vim.opt.runtimepath:prepend(lazypath)
 
-require("lazy").setup("custom.plugins", {
-  dev = {
-    -- directory where you store your local plugin projects
-    path = "~/plugins",
-    fallback = false,
-  },
-  ui = {
-    icons = {
-      cmd = "⌘",
-      config = "🛠",
-      event = "📅",
-      ft = "📂",
-      init = "⚙",
-      keys = "🗝",
-      plugin = "🔌",
-      runtime = "💻",
-      source = "📄",
-      start = "🚀",
-      task = "📌",
-    },
-  },
-})
+require("lazy").setup("plugins")
+
+require("sets")
