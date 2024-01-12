@@ -74,6 +74,7 @@ return {
     require("mason-lspconfig").setup()
 
     local servers = {
+      csharp_ls = {},
       gopls = {},
       pyright = {},
       rust_analyzer = {},
