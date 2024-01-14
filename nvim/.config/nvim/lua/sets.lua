@@ -16,6 +16,7 @@ opt.splitbelow = true
 opt.updatetime = 1000
 opt.hlsearch = true
 opt.scrolloff = 7
+opt.hidden = true
 
 -- Cursorline highlighting control
 --  Only have it on in the active buffer
