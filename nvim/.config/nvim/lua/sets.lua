@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+opt.termguicolors = true
+
 opt.showmode = false
 opt.showcmd = true
 opt.cmdheight = 1
@@ -34,6 +36,10 @@ end
 set_cursorline("WinLeave", false)
 set_cursorline("WinEnter", true)
 set_cursorline("FileType", false, "TelescopePrompt")
+
+opt.signcolumn = "yes"
+
+vim.opt.colorcolumn = "80"
 
 -- Tabs
 opt.autoindent = true
