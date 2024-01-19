@@ -1,7 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    { "williamboman/mason.nvim", opts={} },
+    { "williamboman/mason.nvim", opts = {} },
     "williamboman/mason-lspconfig.nvim",
     "folke/neodev.nvim",
 
@@ -10,7 +10,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
 
-     -- Snippet Engine & its associated nvim-cmp source
+    -- Snippet Engine & its associated nvim-cmp source
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
 
@@ -42,8 +42,16 @@ return {
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
 
+      vim.diagnostic.config({
+        virtual_text = false
+      })
+
+      vim.api.nvim_set_keymap('n', '<Leader>ge', ':lua vim.diagnostic.open_float()<CR>',
+        { noremap = true, silent = true })
+
       nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
       nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+      nmap('<leader>se', ":lua vim.diagnostic.open_float()<CR>", '[S]how [E]rrors')
 
       nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
       nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -74,12 +82,13 @@ return {
     require("mason-lspconfig").setup()
 
     local servers = {
+      clangd = {},
       csharp_ls = {},
       gopls = {},
       pyright = {},
       rust_analyzer = {},
       tsserver = {},
-      html = { filetypes = { 'html', 'twig', 'hbs'} },
+      html = { filetypes = { 'html', 'twig', 'hbs' } },
       lua_ls = {
         Lua = {
           workspace = { checkThirdParty = false },
@@ -119,6 +128,7 @@ return {
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
     require('luasnip.loaders.from_vscode').lazy_load()
+    require("luasnip.loaders.from_snipmate").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets" }
     luasnip.config.setup {}
 
     cmp.setup {
@@ -165,6 +175,5 @@ return {
         { name = 'path' },
       },
     }
-
   end
 }
