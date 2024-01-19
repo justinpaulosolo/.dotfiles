@@ -6,7 +6,7 @@ opt.showmode = false
 opt.showcmd = true
 opt.cmdheight = 1
 opt.incsearch = true
-opt.showmatch = true
+--opt.showmatch = true
 opt.relativenumber = true
 opt.number = true
 opt.ignorecase = true
@@ -42,8 +42,8 @@ opt.signcolumn = "yes"
 vim.opt.colorcolumn = "80"
 
 -- Tabs
-opt.autoindent = true
-opt.cindent = true
+--opt.autoindent = true
+--opt.cindent = true
 opt.wrap = true
 
 opt.tabstop = 4
