@@ -42,16 +42,8 @@ return {
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
 
-      vim.diagnostic.config({
-        virtual_text = false
-      })
-
-      vim.api.nvim_set_keymap('n', '<Leader>ge', ':lua vim.diagnostic.open_float()<CR>',
-        { noremap = true, silent = true })
-
       nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
       nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-      nmap('<leader>se', ":lua vim.diagnostic.open_float()<CR>", '[S]how [E]rrors')
 
       nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
       nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
