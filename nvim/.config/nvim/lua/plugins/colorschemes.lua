@@ -2,28 +2,29 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    priority = 1000,
-    config = function()
-      --vim.cmd.colorscheme "catppuccin"
-    end,
-    lazy = true
-  },
-  {
-    "bluz71/vim-moonfly-colors",
-    name = "moonfly",
-    lazy = true,
-    config = function()
-      vim.cmd [[colorscheme moonfly]]
-    end,
-    priority = 1000
-  },
-  {
-    "bluz71/vim-nightfly-colors",
-    name = "nightfly",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd [[colorscheme nightfly]]
+      require("catppuccin").setup({
+        transparent_background = true,
+      })
+
+      vim.cmd.colorscheme "catppuccin"
     end
   },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require("rose-pine").setup({
+        styles = {
+          transparency = true
+        }
+      })
+
+      vim.cmd.colorscheme "rose-pine"
+    end
+  }
 }

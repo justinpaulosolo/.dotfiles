@@ -1,12 +1,10 @@
 local opt = vim.opt
 
-opt.termguicolors = true
-
+opt.syntax = "on"
 opt.showmode = false
 opt.showcmd = true
 opt.cmdheight = 1
 opt.incsearch = true
---opt.showmatch = true
 opt.relativenumber = true
 opt.number = true
 opt.ignorecase = true
@@ -19,6 +17,12 @@ opt.updatetime = 300
 opt.hlsearch = true
 opt.scrolloff = 7
 opt.hidden = true
+opt.signcolumn = "yes"
+opt.colorcolumn = "80"
+opt.belloff = "all"
+opt.swapfile = false
+opt.mouse = "a"
+opt.termguicolors = true
 
 -- Cursorline highlighting control
 --  Only have it on in the active buffer
@@ -37,23 +41,4 @@ set_cursorline("WinLeave", false)
 set_cursorline("WinEnter", true)
 set_cursorline("FileType", false, "TelescopePrompt")
 
-opt.signcolumn = "yes"
-
-vim.opt.colorcolumn = "80"
-
--- Tabs
---opt.autoindent = true
---opt.cindent = true
-opt.wrap = true
-
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
-opt.expandtab = true
-
-opt.belloff = "all"
-
-opt.swapfile = false
-
-opt.mouse = "a"
 

@@ -1,35 +1,29 @@
 return {
-    -- Highlight, edit, and navigate code
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-    },
-    config = vim.defer_fn(function()
-      require('nvim-treesitter.configs').setup {
-        -- Add languages to be installed here that you want installed for treesitter
-        ensure_installed = { 'c', 'cpp', 'c_sharp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
-
-        -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-        auto_install = false,
-        -- Install languages synchronously (only applied to `ensure_installed`)
-        sync_install = false,
-        -- List of parsers to ignore installing
-        ignore_install = {},
-        -- You can specify additional Treesitter modules here: -- For example: -- playground = {--enable = true,-- },
-        modules = {},
-        highlight = { enable = true },
-        indent = { enable = true },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = '<c-space>',
-            node_incremental = '<c-space>',
-            scope_incremental = '<c-s>',
-            node_decremental = '<M-space>',
-          },
+  "nvim-treesitter/nvim-treesitter",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
+  config = vim.defer_fn(function()
+    require('nvim-treesitter.configs').setup {
+      -- Add languages to be installed here that you want installed for treesitter
+      ensure_installed = { 'c', 'cpp', 'c_sharp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+      auto_install = false,
+      sync_install = false,
+      ignore_install = {},
+      modules = {},
+      highlight = { enable = true },
+      indent = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = '<c-space>',
+          node_incremental = '<c-space>',
+          scope_incremental = '<c-s>',
+          node_decremental = '<M-space>',
         },
-      }
-    end, 0
-    ),
-    build = ":TSUpdate",
+      },
+    }
+  end, 0
+  ),
+  build = ":TSUpdate",
 }
