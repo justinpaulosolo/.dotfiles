@@ -23,6 +23,7 @@ opt.belloff = "all"
 opt.swapfile = false
 opt.mouse = "a"
 opt.termguicolors = true
+opt.signcolumn = "yes"
 
 -- Cursorline highlighting control
 --  Only have it on in the active buffer
@@ -40,4 +41,3 @@ end
 set_cursorline("WinLeave", false)
 set_cursorline("WinEnter", true)
 set_cursorline("FileType", false, "TelescopePrompt")
-
