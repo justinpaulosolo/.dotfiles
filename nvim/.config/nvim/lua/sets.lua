@@ -17,8 +17,8 @@ opt.updatetime = 300
 opt.hlsearch = true
 opt.scrolloff = 7
 opt.hidden = true
-opt.signcolumn = "yes"
-opt.colorcolumn = "80"
+--opt.signcolumn = "yes"
+--opt.colorcolumn = "80"
 opt.belloff = "all"
 opt.swapfile = false
 opt.mouse = "a"
@@ -40,6 +40,4 @@ end
 set_cursorline("WinLeave", false)
 set_cursorline("WinEnter", true)
 set_cursorline("FileType", false, "TelescopePrompt")
-
-opt.cursorcolumn = true
 
