@@ -17,7 +17,7 @@ return {
     -- Adds a number of user-friendly snippets
     "rafamadriz/friendly-snippets",
 
-   {
+    {
       "j-hui/fidget.nvim",
       opts = {
         -- options
@@ -75,7 +75,6 @@ return {
 
     local servers = {
       clangd = {},
-      csharp_ls = {},
       gopls = {},
       pyright = {},
       rust_analyzer = {},
