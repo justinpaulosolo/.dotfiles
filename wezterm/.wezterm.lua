@@ -38,7 +38,7 @@ config.force_reverse_video_cursor = true
 
 config.colors = {
 		foreground = "#dcd7ba",
-		background = "0d0d0d",
+		background = "#1f1f28",
 
 		cursor_bg = "#c8c093",
 		cursor_fg = "#c8c093",

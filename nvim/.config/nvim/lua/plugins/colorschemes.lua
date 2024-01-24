@@ -4,7 +4,7 @@ return {
   priority = 1000,
   config = function()
     require('kanagawa').setup({
-      transparent = true,
+      --transparent = true,
       colors = {
         theme = {
           all = {
@@ -38,6 +38,6 @@ return {
         }
       end,
     })
-    vim.cmd("colorscheme kanagawa-dragon")
+    vim.cmd("colorscheme kanagawa")
   end,
 }
