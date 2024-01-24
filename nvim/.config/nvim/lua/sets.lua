@@ -3,7 +3,7 @@ local opt = vim.opt
 opt.syntax = "on"
 opt.showmode = false
 opt.showcmd = true
-opt.cmdheight = 1
+opt.cmdheight = 0
 opt.incsearch = true
 opt.relativenumber = true
 opt.number = true
@@ -24,6 +24,7 @@ opt.swapfile = false
 opt.mouse = "a"
 opt.termguicolors = true
 opt.signcolumn = "yes"
+opt.wrap = false
 
 -- Cursorline highlighting control
 --  Only have it on in the active buffer
