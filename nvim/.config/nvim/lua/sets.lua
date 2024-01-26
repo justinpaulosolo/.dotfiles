@@ -13,18 +13,21 @@ opt.hidden = true
 opt.equalalways = false
 opt.splitright = true
 opt.splitbelow = true
-opt.updatetime = 300
+opt.updatetime = 50
 opt.hlsearch = true
 opt.scrolloff = 7
 opt.hidden = true
---opt.signcolumn = "yes"
---opt.colorcolumn = "80"
 opt.belloff = "all"
 opt.swapfile = false
 opt.mouse = "a"
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.wrap = false
+
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
 
 -- Cursorline highlighting control
 --  Only have it on in the active buffer

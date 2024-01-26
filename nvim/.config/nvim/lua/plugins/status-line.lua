@@ -9,8 +9,8 @@ return {
         section_separators = { left = '', right = '' },
       },
       sections = {
-        lualine_b = {'branch', 'diagnostics'},
-        lualine_x = { },
+        lualine_b = { 'branch', 'diagnostics' },
+        lualine_x = {},
         lualine_z = { 'filetype' },
       },
     })
