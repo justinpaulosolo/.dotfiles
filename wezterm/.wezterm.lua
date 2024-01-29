@@ -8,6 +8,7 @@ end
 
 local fonts = {
 	"MonoLisa",
+	"Berkeley Mono Trial",
 	"Geist Mono",
 }
 

@@ -1,15 +1,13 @@
 local nnoremap = require("keymap_utils").nnoremap -- Normal mode
 local inoremap = require("keymap_utils").inoremap -- Insert mode
 local tnoremap = require("keymap_utils").tnoremap -- Terminal mode
+local vnoremap = require("keymap_utils").vnoremap -- Visual mode
 local xnoremap = require("keymap_utils").xnoremap -- Visual mode
 
 -- [[ Normal Mode ]] --
 
 -- Disable space
 nnoremap("<space>", "<nop>")
-
--- Forgot what this is LOL
-xnoremap("<leader>p", [["_dP]])
 
 -- Leave insert mode
 inoremap("<C-c>", "<Esc>")
@@ -39,6 +37,19 @@ nnoremap("<leader>no", ":nohlsearch<CR>")
 -- Navigate to the beginning/end of line
 nnoremap("H", "^")
 nnoremap("L", "$")
+
+nnoremap("<leader>oc", function()
+  require("copilot.panel").open({})
+end, {desc = "[O]pen [C]opilot panel" })
+
+-- [[ Visual Mode ]] --
+
+-- Move lines up and down
+vnoremap("<A-j>",":m '>+1<CR>gv=gv")
+vnoremap("<A-k>",":m '<-2<CR>gv=gv")
+
+-- Paste without yanking
+xnoremap("<leader>p", '"_dP')
 
 -- [[ Terminal ]] --
 
