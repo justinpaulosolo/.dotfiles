@@ -5,15 +5,27 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
+      require("catppuccin").setup({
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          treesitter = true,
+          notify = false,
+          mason = false,
+          telescope = {
+            enabled = true,
+          },
+        }
+      })
       vim.cmd.colorscheme "catppuccin-macchiato"
     end,
   },
   {
     "oxfist/night-owl.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
-      -- vim.cmd.colorscheme("night-owl")
+      vim.cmd.colorscheme("night-owl")
     end,
   }
 }

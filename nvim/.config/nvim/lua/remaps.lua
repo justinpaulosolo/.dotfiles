@@ -27,7 +27,6 @@ nnoremap("gg", "ggzz")
 nnoremap("N", "Nzzzv")
 nnoremap("n", "nzzzv")
 
-
 nnoremap("<leader>t", ":new +terminal<CR> +i", { desc = "[T]erminal" })
 nnoremap("<leader>vt", ":vnew +terminal<CR> +i", { desc = "[V]ertical [T]erminal" })
 nnoremap("<leader>tt", ":tabnew +terminal<CR> +i", { desc = "[T]ab [T]erminal" })
@@ -48,6 +47,8 @@ nnoremap("<leader>gf", require("telescope.builtin").git_files, { desc = "[G]it [
 nnoremap("<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
 nnoremap("<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp Tags" })
 nnoremap("<leader>sc", require("telescope.builtin").commands, { desc = "[S]earch [C]ommands" })
+nnoremap("<leader>dl", require("telescope.builtin").diagnostics, { desc = "[D]iagnostics [L]ist" })
+--nnoremap("<leader>ca", require("telescope.builtin").lsp_code_actions, { desc = "[C]ode [A]ctions" })
 
 -- Harpoon
 nnoremap("<leader>ha", function()
@@ -79,7 +80,51 @@ nnoremap("<leader>5", function()
   require("harpoon"):list():select(5)
 end, { desc = "[H]arpoon [5]" })
 
--- [[             ]] --
+-- Diagnostics
+nnoremap("<leader>]d", function ()
+  vim.diagnostic.goto_next({})
+  vim.api.nvim_feedkeys("zz", "n", false)
+end, { desc = "']' 'd' Next Diagnostics" })
+
+nnoremap("<leader>[d", function ()
+  vim.diagnostic.goto_prev({})
+  vim.api.nvim_feedkeys("zz", "n", false)
+end, { desc = "'[' 'd' Previous Diagnostics" })
+
+nnoremap("<leader>]e", function ()
+  vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
+  vim.api.nvim_feedkeys("zz", "n", false)
+end, { desc = "']' 'e' Next Error" })
+
+nnoremap("<leader>[e", function ()
+  vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
+  vim.api.nvim_feedkeys("zz", "n", false)
+end, { desc = "'[' 'e' Previous Error" })
+
+nnoremap("<leader>]w", function ()
+  vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN })
+  vim.api.nvim_feedkeys("zz", "n", false)
+end, { desc = "']' 'w' Next Warning" })
+
+nnoremap("<leader>[w", function ()
+  vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })
+  vim.api.nvim_feedkeys("zz", "n", false)
+end, { desc = "'[' 'w' Previous Warning" })
+
+nnoremap("<leader>do", function ()
+  vim.diagnostic.open_float({
+    scope = "line",
+  })
+end, { desc = "[d]iagnostic [o]pen" })
+
+-- Quickfix
+nnoremap("<leader>ld", vim.diagnostic.setqflist, { desc = "Quickfix [L]ist [D]iagnostics" })
+nnoremap("<leader>cn", ":cnext<cr>zz", { desc = "Quickfix [C]next" })
+nnoremap("<leader>cp", ":cprev<cr>zz", { desc = "Quickfix [C]previous" })
+nnoremap("<leader>co", ":copen<cr>", { desc = "Quickfix [C]open" })
+nnoremap("<leader>cc", ":cclose<cr>", { desc = "Quickfix [C]close" })
+
+-- [[             ]] -
 -- [[ Visual Mode ]] --
 -- [[             ]] --
 
