@@ -4,21 +4,20 @@ local tnoremap = require("keymap_utils").tnoremap -- Terminal mode
 local vnoremap = require("keymap_utils").vnoremap -- Visual mode
 local xnoremap = require("keymap_utils").xnoremap -- Visual mode
 
+-- [[             ]] --
 -- [[ Normal Mode ]] --
+-- [[             ]] --
 
--- Disable spac("harpoon").e
-nnoremap("<space>", "<nop>")
+nnoremap("<space>", "<nop>")              -- Disable space
+inoremap("<C-c>", "<Esc>")                -- Exit insert mode
+nnoremap("<leader><leader>", "<C-^>")     -- Switch between last two buffers
+nnoremap("<leader>no", ":nohlsearch<CR>") -- Turn off highlighted results
 
--- Leave insert mode
-inoremap("<C-c>", "<Esc>")
+-- Navigate to the beginning/end of line
+nnoremap("H", "^")
+nnoremap("L", "$")
 
--- Format
-nnoremap("<leader>f", vim.lsp.buf.format)
-
--- Open Netrw
-nnoremap("<leader>pv", vim.cmd.Ex, { silent = false })
-
--- Center buffer while navigating
+-- Center cursor after scrolling
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("G", "Gzz")
@@ -28,26 +27,18 @@ nnoremap("gg", "ggzz")
 nnoremap("N", "Nzzzv")
 nnoremap("n", "nzzzv")
 
--- Swap between last two buffers
-nnoremap("<leader><leader>", "<C-^>")
 
--- Turn off highlighted results
-nnoremap("<leader>no", ":nohlsearch<CR>")
+nnoremap("<leader>t", ":new +terminal<CR> +i", { desc = "[T]erminal" })
+nnoremap("<leader>vt", ":vnew +terminal<CR> +i", { desc = "[V]ertical [T]erminal" })
+nnoremap("<leader>tt", ":tabnew +terminal<CR> +i", { desc = "[T]ab [T]erminal" })
 
--- Navigate to the beginning/end of line
-nnoremap("H", "^")
-nnoremap("L", "$")
+nnoremap("<leader>f", vim.lsp.buf.format, { desc = "[F]ormat" })
+nnoremap("<leader>fb", vim.cmd.Ex, { silent = false, desc = "[F]ile [B]rowser" })
+
 
 nnoremap("<leader>oc", function()
   require("copilot.panel").open({})
 end, { desc = "[O]pen [C]opilot panel" })
-
--- Open terminal in a new split
-nnoremap("<leader>t", ":new +terminal<CR> +i")
-nnoremap("<leader>vt", ":vnew +terminal<CR> +i")
-
--- Open terminal in a new tab
-nnoremap("<leader>tt", ":tabnew +terminal<CR> +i")
 
 -- Telescope
 nnoremap("<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently used files" })
@@ -87,7 +78,10 @@ end, { desc = "[H]arpoon [4]" })
 nnoremap("<leader>5", function()
   require("harpoon"):list():select(5)
 end, { desc = "[H]arpoon [5]" })
+
+-- [[             ]] --
 -- [[ Visual Mode ]] --
+-- [[             ]] --
 
 -- Move lines up and down
 vnoremap("<A-j>", ":m '>+1<CR>gv=gv")
@@ -99,7 +93,9 @@ xnoremap("<leader>p", '"_dP')
 -- Save to system clipboard
 vnoremap("<leader>y", '"+y')
 
--- [[ Terminal ]] --
+-- [[             ]] --
+-- [[ Visual Mode ]] --
+-- [[             ]] --
 
 -- Exit terminal mode
 tnoremap("<Esc>", "<C-\\><C-n>")
