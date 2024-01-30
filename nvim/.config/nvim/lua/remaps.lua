@@ -40,16 +40,35 @@ nnoremap("L", "$")
 
 nnoremap("<leader>oc", function()
   require("copilot.panel").open({})
-end, {desc = "[O]pen [C]opilot panel" })
+end, { desc = "[O]pen [C]opilot panel" })
+
+-- Open terminal in a new split
+nnoremap("<leader>t", ":new +terminal<CR> +i")
+nnoremap("<leader>vt", ":vnew +terminal<CR> +i")
+
+-- Open terminal in a new tab
+nnoremap("<leader>tt", ":tabnew +terminal<CR> +i")
+
+-- Telescope
+nnoremap("<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently used files" })
+nnoremap("<leader>sb", require("telescope.builtin").buffers, { desc = "[S]earch [B]uffers" })
+nnoremap("<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch [G]rep" })
+nnoremap("<leader>gf", require("telescope.builtin").git_files, { desc = "[G]it [F]iles" })
+nnoremap("<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
+nnoremap("<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp Tags" })
+nnoremap("<leader>sc", require("telescope.builtin").commands, { desc = "[S]earch [C]ommands" })
 
 -- [[ Visual Mode ]] --
 
 -- Move lines up and down
-vnoremap("<A-j>",":m '>+1<CR>gv=gv")
-vnoremap("<A-k>",":m '<-2<CR>gv=gv")
+vnoremap("<A-j>", ":m '>+1<CR>gv=gv")
+vnoremap("<A-k>", ":m '<-2<CR>gv=gv")
 
 -- Paste without yanking
 xnoremap("<leader>p", '"_dP')
+
+-- Save to system clipboard
+vnoremap("<leader>y", '"+y')
 
 -- [[ Terminal ]] --
 
@@ -57,4 +76,4 @@ xnoremap("<leader>p", '"_dP')
 tnoremap("<Esc>", "<C-\\><C-n>")
 tnoremap("jj", [[<C-\><C-n>]])
 
-tnoremap("<space>","<space")
+tnoremap("<space>", "<space>")

@@ -1,9 +1,44 @@
 return {
-  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-  dependencies = { 'nvim-lua/plenary.nvim' },
-  keys = {
-    { "<leader>sf", "<cmd>Telescope find_files<cr>", desc ="[S]earch [F]iles" },
-    { "<leader>gf", "<cmd>Telescope git_files<cr>", desc ="[G]it [F]iles" },
-    { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc ="[S]earch [H]elp" },
-  },
+  "nvim-telescope/telescope.nvim",
+  tag = "0.1.5",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  config = function()
+    require("telescope").setup({
+      defaults = {
+        prompt_prefix = "❯ ",
+        selection_caret = "❯ ",
+        entry_prefix = "  ",
+        winblend = 0,
+        layout_strategy = "horizontal",
+      },
+      pickers = {
+        buffers = {
+          sort_lastused = true,
+          sort_mru = true,
+          theme = "dropdown",
+        },
+        find_files = {
+          theme = "dropdown",
+          find_command = { "rg", "--files", "--hidden", "--follow", "--glob", "!.git" },
+        },
+        oldfiles = {
+          theme = "dropdown",
+        },
+        live_grep = {
+          theme = "dropdown",
+        },
+        git_files = {
+          theme = "dropdown",
+        },
+        help_tags = {
+          theme = "dropdown",
+          previewer = false,
+        },
+        commands = {
+          theme = "dropdown",
+          previewer = false,
+        },
+      },
+    })
+  end
 }
