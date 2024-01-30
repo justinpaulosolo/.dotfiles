@@ -64,6 +64,17 @@ return {
           previewer = false,
           shorten_path = false,
         },
+        git_status = {
+          theme = "dropdown",
+          winblend = 10,
+          previewer = false,
+          shorten_path = false,
+          git_icons = {
+            changed = "",
+            staged = "",
+            untracked = "",
+          },
+        },
         help_tags = {
           show_version = true,
         },
@@ -76,6 +87,5 @@ return {
         },
       },
     })
-
   end
 }
