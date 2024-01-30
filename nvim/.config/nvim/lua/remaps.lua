@@ -6,7 +6,7 @@ local xnoremap = require("keymap_utils").xnoremap -- Visual mode
 
 -- [[ Normal Mode ]] --
 
--- Disable space
+-- Disable spac("harpoon").e
 nnoremap("<space>", "<nop>")
 
 -- Leave insert mode
@@ -58,6 +58,35 @@ nnoremap("<leader>sf", require("telescope.builtin").find_files, { desc = "[S]ear
 nnoremap("<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp Tags" })
 nnoremap("<leader>sc", require("telescope.builtin").commands, { desc = "[S]earch [C]ommands" })
 
+-- Harpoon
+nnoremap("<leader>ha", function()
+  require("harpoon"):list():append()
+end, { desc = "[A]dd to Harpoon" })
+
+nnoremap("<leader>ho", function()
+  local harpoon = require("harpoon")
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = "[H]arpoon [O]pen" })
+
+nnoremap("<leader>1", function()
+  require("harpoon"):list():select(1)
+end, { desc = "[H]arpoon [1]" })
+
+nnoremap("<leader>2", function()
+  require("harpoon"):list():select(2)
+end, { desc = "[H]arpoon [2]" })
+
+nnoremap("<leader>3", function()
+  require("harpoon"):list():select(3)
+end, { desc = "[H]arpoon [3]" })
+
+nnoremap("<leader>4", function()
+  require("harpoon"):list():select(4)
+end, { desc = "[H]arpoon [4]" })
+
+nnoremap("<leader>5", function()
+  require("harpoon"):list():select(5)
+end, { desc = "[H]arpoon [5]" })
 -- [[ Visual Mode ]] --
 
 -- Move lines up and down
