@@ -11,7 +11,7 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font_with_fallback({
-	"MonoLisa",
+	"MonoLisaNerdFont",
 })
 
 config.audible_bell = "Disabled"
