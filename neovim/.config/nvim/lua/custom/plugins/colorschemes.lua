@@ -1,9 +1,9 @@
 return {
   {
-    'mellow-theme/mellow.nvim',
+    'Yazeed1s/minimal.nvim',
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme 'mellow'
+      vim.cmd.colorscheme 'minimal'
     end,
   },
 }
