@@ -1,4 +1,5 @@
 return {
+  -- TODO: Read documents
 
   { -- Linting
     'mfussenegger/nvim-lint',

@@ -1,9 +1,9 @@
 return {
   {
-    'Yazeed1s/minimal.nvim',
+    'Mofiqul/dracula.nvim',
     priority = 1000,
-    init = function()
-      vim.cmd.colorscheme 'minimal'
+    config = function()
+      vim.cmd.colorscheme 'dracula'
     end,
   },
 }
