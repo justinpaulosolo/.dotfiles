@@ -20,7 +20,7 @@ return {
     'Mofiqul/dracula.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'dracula'
+      -- vim.cmd.colorscheme 'dracula'
     end,
   },
   {
@@ -36,5 +36,13 @@ return {
     config = function()
       -- vim.cmd.colorscheme 'kanagawa-wave'
     end,
+  },
+  {
+    'ellisonleao/gruvbox.nvim',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'gruvbox'
+    end,
+    opts = ...,
   },
 }
