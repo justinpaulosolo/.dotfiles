@@ -1,0 +1,64 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+[aws]
+disabled=false
+style = 'yellow'
+symbol = 'aws '
+format='on [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
+[aws.region_aliases]
+eu-central-1 = 'fra'
+eu-central-2 = 'zrh'
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[git_branch]
+symbol = "🌱 "
+truncation_length = 10
+truncation_symbol = ""
+style = "bold red"
+# ignore_branches = ["master", "main"]
+
+[sudo]
+style = "bold green"
+symbol = "👩‍💻 "
+disabled = false
+
+[character]
+success_symbol = "[➜](bold yellow)"
+error_symbol = "[x](bold red)"
+vicmd_symbol = "[<](bold green)"
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+style = "bold red"
+
+[docker_context]
+symbol = "docker "
+
+[nodejs]
+disabled=false
+symbol = "n"
+version_format='${major}.${minor}'
+
+[package]
+symbol = "pkg "
+
+[php]
+disabled=false
+version_format='${major}.${minor}'
+symbol = "php"
