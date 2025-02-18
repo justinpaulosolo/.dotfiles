@@ -3,4 +3,4 @@ font-style = Regular
 font-size = 17
 font-thicken = true
 
-theme = flexoki-dark
+theme = gruvbox-material
