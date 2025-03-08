@@ -1,6 +1,9 @@
-font-family = Berkeley Mono
+font-family = JetBrainsMono Nerd Font Mono
 font-style = Regular
 font-size = 17
 font-thicken = true
 
-theme = gruvbox-material
+theme = Kanagawa Wave
+
+background-opacity = 0.90
+background-blur = true
