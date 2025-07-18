@@ -1,3 +1,6 @@
 TODO:
 - [ ] NEOVIM
-    - [ ] LSP
+    - [x] Lazy
+    - [x] LSP
+    - [x] Telescope
+    - [x] Treesitter
