@@ -1,0 +1,5 @@
+require('plugins.colorscheme')
+require('plugins.telescope')
+require('plugins.treesitter')
+require('plugins.mini')
+require('plugins.oil')
