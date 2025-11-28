@@ -1,0 +1,13 @@
+[window]
+padding.x = 14
+padding.y = 14
+decorations = "Full"
+decorations_theme_variant = "Light"
+
+[font]
+normal.family = "Berkeley Mono"
+bold.family = "Berkeley Mono" 
+italic.family = "Berkeley Mono"
+bold_italic.family = "Berkeley Mono"
+
+size = 15.0
