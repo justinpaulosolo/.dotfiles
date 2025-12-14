@@ -2,9 +2,9 @@ font-family = Berkley Mono
 font-feature = -calt
 font-size = 17
 
-theme = Gruvbox Dark Hard
+theme = Yukinord
 
-background-opacity = 1
+background-opacity = 0.99
 background-blur = true
 window-padding-x = 14
 window-padding-y = 14
