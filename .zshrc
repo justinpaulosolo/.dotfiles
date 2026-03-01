@@ -16,6 +16,7 @@ alias gi="git init"
 alias gcl="git clone"
 
 export TERM=tmux-256color
+export GPG_TTY=$(tty)
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.aspire/bin:$PATH"
 
