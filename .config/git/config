@@ -1,0 +1,33 @@
+[user]
+  name = Justin Solo
+  email = justin@j-s.sh
+	signingkey = 2AF033262719401D
+
+[commit]
+  gpgSign = true
+  template = ~/.config/git/template
+  verbose = true
+
+[core]
+  editor = nvim
+  compression = 9 
+  whitespace = error
+  preloadindex = true
+
+[status]
+  branch = true
+  short = true
+  showStash = true
+  showUntrackedFiles = all
+
+[push]
+  autoSetupRemote = true  # easier to push new branches
+  default = current  # push only current branch by default
+  followTags = true  # push also tags
+
+[pull]
+  rebase = true
+  default = current
+
+[url "git@github.com:justinpaulosolo/"]
+  insteadOf = "jps:"

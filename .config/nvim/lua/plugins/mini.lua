@@ -1,0 +1,40 @@
+return {
+	"nvim-mini/mini.nvim",
+	version = false,
+	config = function()
+		require("mini.ai").setup()
+		require("mini.pairs").setup()
+		require("mini.surround").setup()
+
+		-- icons, replace nvim_web_devicons
+		require("mini.icons").setup()
+		MiniIcons.mock_nvim_web_devicons()
+
+		-- override vim.notify and show lsp info
+		require("mini.notify").setup({
+			lsp_progress = {
+				enable = false,
+			},
+			content = {
+				format = function(notif)
+					return notif.msg
+				end,
+			},
+			window = {
+				config = function()
+					local has_statusline = vim.o.laststatus > 0
+					local pad = vim.o.cmdheight + (has_statusline and 1 or 0)
+
+					return {
+						border = "rounded",
+						col = vim.o.columns,
+						row = vim.o.lines - pad,
+						anchor = "SE",
+						title = "",
+					}
+				end,
+			},
+		})
+		MiniNotify.make_notify()
+	end,
+}
