@@ -1,0 +1,5 @@
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>tq", ":tabclose<CR>")
+vim.keymap.set("n", "<leader>ts", ":tab split<CR>")
+vim.keymap.set("n", "<leader><Tab>", ":tabnext<CR>")
+vim.keymap.set("n", "<leader><S-Tab>", ":tabprevious<CR>")

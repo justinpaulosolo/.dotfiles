@@ -23,7 +23,7 @@ return {
 
 				vim.keymap.set("n", "<leader>h", function()
 					vim.diagnostic.open_float({
-						border = "rounded",
+						---border = "rounded",
 					})
 				end, opts)
 			end,

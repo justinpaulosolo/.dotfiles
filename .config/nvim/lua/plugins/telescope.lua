@@ -33,6 +33,13 @@ return {
 			},
 			pickers = {
 				live_grep = {
+					layout_strategy = "vertical",
+					layout_config = {
+						width = 0.7,
+						height = 0.9,
+						prompt_position = "bottom",
+						preview_height = 0.4,
+					},
 					file_ignore_patterns = { "node_modules", ".git" },
 					additional_args = function(_)
 						return { "--hidden" }

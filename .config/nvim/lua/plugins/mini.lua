@@ -26,7 +26,6 @@ return {
 					local pad = vim.o.cmdheight + (has_statusline and 1 or 0)
 
 					return {
-						border = "rounded",
 						col = vim.o.columns,
 						row = vim.o.lines - pad,
 						anchor = "SE",

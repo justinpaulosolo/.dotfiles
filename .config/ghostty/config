@@ -1,2 +1,4 @@
 theme = TokyoNight
 background-opacity = 1.0
+font-family = Berkeley Mono
+font-size = 16
