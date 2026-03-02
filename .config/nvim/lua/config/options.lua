@@ -36,3 +36,12 @@ vim.opt.fillchars = { eob = " " }
 vim.o.laststatus = 3 -- global statusline
 
 vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
+
+vim.filetype.add({
+	extension = {
+		gotmpl = "gotmpl",
+	},
+	pattern = {
+		["go.work"] = "gowork",
+	},
+})
