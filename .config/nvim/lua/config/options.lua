@@ -37,6 +37,8 @@ vim.o.laststatus = 3 -- global statusline
 
 vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
 
+vim.opt.conceallevel = 2
+
 vim.filetype.add({
 	extension = {
 		gotmpl = "gotmpl",

@@ -20,6 +20,9 @@ alias tn="tmux new-session -s"
 alias tl="tmux list-session"
 alias ta="tmux attach-session"
 
+# Obsidian path
+alias cdobs='cd "/Users/justin/Library/Mobile Documents/iCloud~md~obsidian/Documents/Personal/"'
+
 export TERM=tmux-256color
 export GPG_TTY=$(tty)
 export PATH="/opt/homebrew/bin:$PATH"
