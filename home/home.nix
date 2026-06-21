@@ -1,4 +1,15 @@
 { config, pkgs, ... }:
+let
+  berkeley-mono = pkgs.stdenvNoCC.mkDerivation {
+    pname = "berkeley-mono";
+    version = "1.0";
+    src = ../fonts/berkeley-mono;
+    installPhase = ''
+      mkdir -p $out/share/fonts/opentype
+      cp -r $src/*.otf $out/share/fonts/opentype/
+    '';
+  };
+in
 {
   home.username = "justin";
   home.homeDirectory = "/home/justin";
@@ -16,6 +27,16 @@
       };
       init.defaultBranch = "main";
       pull.rebase = false;
+    };
+  };
+
+  programs.ghostty = {
+    enable = true;
+    enableBashIntegration = true;
+    settings = {
+      theme = "Abernathy";
+      background-opacity = "0.95";
+      font-family = "Berkeley Mono";
     };
   };
 

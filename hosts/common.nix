@@ -36,6 +36,7 @@
     vim
     wget
     pavucontrol
+    unzip
   ];
 
   services.openssh.enable = true;
