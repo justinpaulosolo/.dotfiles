@@ -18,6 +18,11 @@
   boot.kernelParams = [ "nvidia-drm.modeset=1" ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  
+  hardware.graphics = {
+    enable32Bit = true;
+  };
+
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
@@ -26,5 +31,21 @@
     nvidiaSettings = true;
   };
 
-  system.stateVersion = "26.05"; # match what you had originally
+  programs.steam = {
+   enable = true;
+   remotePlay.openFirewall = true;
+   dedicatedServer.openFirewall = true;
+   gamescopeSession.enable = true;
+  };
+
+  programs.gamemode = {
+    enable = true;
+    settings = {
+      general = {
+        renice = 10;
+      };
+    };
+  };
+
+  system.stateVersion = "26.05";
 }

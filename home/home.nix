@@ -15,8 +15,23 @@ in
   home.homeDirectory = "/home/justin";
   home.stateVersion = "26.05"; # match whatever you set in configuration.nix — don't bump retroactively
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
+  };
+
+  home.file.".config/nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/nvim";
+
   programs.bash.enable = true;
   programs.kitty.enable = true;
+
+  programs.starship = {
+    enable = true;
+  };
 
   programs.git = {
     enable = true;
@@ -34,9 +49,11 @@ in
     enable = true;
     enableBashIntegration = true;
     settings = {
-      theme = "Abernathy";
+      theme = "Jellybeans";
       background-opacity = "0.95";
       font-family = "Berkeley Mono";
+      window-padding-x = "10";
+      window-padding-y = "8";
     };
   };
 
@@ -44,6 +61,12 @@ in
     enable = true;
     settings = [
       {
+        env = [
+          "HYPRCURSOR_THEME,Bibata-Modern-Ice"
+          "HYPRCURSOR_SIZE,24"
+          "XCURSOR_THEME,Bibata-Modern-Ice"
+          "XCURSOR_SIZE,24"
+        ];
         layer = "top";
         position = "top";
         height = 30;
@@ -70,6 +93,14 @@ in
   wayland.windowManager.hyprland.configType = "hyprlang";
   wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
   wayland.windowManager.hyprland.settings = {
+    general = {
+      "col.active_border" = "rgb(8fbfdc)";
+      "col.inactive_border" = "rgb(606060)"; # palette.scorpion — subtle grey for unfocused
+    };
+    exec-once = [
+      "awww-daemon"
+      "awww img ~/.dotfiles/wallpapers/blob.png"
+    ];
     animations = {
       enabled = true;
       bezier = [
@@ -124,6 +155,10 @@ in
     rofi
     brave
     wl-clipboard
+    awww
+    ripgrep
+    fd
+    neovim
   ];
 
   services.cliphist = {
