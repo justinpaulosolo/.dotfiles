@@ -1,0 +1,13 @@
+[user]
+    name = Justin Solo
+    email = justin@justinsolo.com
+    signingkey = ~/.ssh/id_ed25519.pub
+
+[gpg]
+    format = ssh
+
+[url "git@github.com:"]
+    insteadOf = "gh:"
+
+[url "git@github.com:justinpaulosolo/"]
+    insteadOf = "js:"
